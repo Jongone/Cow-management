@@ -41,9 +41,9 @@ public class MenuManager {
 		Scanner sc = new Scanner(System.in);
 		System.out.println("Cow ID:");
 		int cowid = sc.nextInt();
-		System.out.println("Cow Sex:");
+		System.out.println("Cow Sex(¾Ï/¼ö):");
 		String cowsex = sc.next();
-		System.out.println("Cow weight:");
+		System.out.println("Cow weight(kg):");
 		double cowweight = sc.nextDouble();
 	}
 	public static void deleteCow() {
