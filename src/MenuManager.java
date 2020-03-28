@@ -15,6 +15,7 @@ public class MenuManager {
 			System.out.println("5.Sold List");
 			System.out.println("6.Show Menu");
 			System.out.println("7.Exit");
+			System.out.println("Select one number between 1-7:");
 			num = sc.nextInt();
 			if (num == 1) {
 				addCow();
