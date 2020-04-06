@@ -3,68 +3,41 @@ import java.util.Scanner;
 public class MenuManager {
 
 	public static void main(String[] args) {
-		Scanner sc = new Scanner(System.in);
-		int num = 6;
+		Scanner sc = new Scanner(System.in);    //필드를 통해 인스턴스를 계속 사용하지 않고 사용하게 함
+		Cowmanager Cowmanager = new Cowmanager(sc); 
+		
+		int num = 5;
 
-		while(num!=7) {
+		while(num!=6) {
 			System.out.println("-Select Menu-");
 			System.out.println("1.Add Cow");
 			System.out.println("2.Delete Cow");
 			System.out.println("3.Edit Cow");
 			System.out.println("4.View Cow");
 			System.out.println("5.Sold List");
-			System.out.println("6.Show Menu");
-			System.out.println("7.Exit");
-			System.out.println("Select one number between 1-7:");
+			System.out.println("6.Exit");
+			System.out.println("Select one number between 1-6:");
 			num = sc.nextInt();
 			if (num == 1) {
-				addCow();
+				Cowmanager.addCow();
 			}
 			else if (num == 2) {
-				deleteCow();
+				Cowmanager.deleteCow();
 			}
 			else if (num == 3) {
-				editCow();
+				Cowmanager.editCow();
 			}
 			else if (num == 4) {
-				viewCow();
+				Cowmanager.viewCow();
 			}
 			else if (num == 5) {
-				soldList();
+				Cowmanager.soldList();
 			}
 			else {
 				continue;
 			}
 		}
 	}
-	public static void addCow() {
-		Scanner sc = new Scanner(System.in);
-		System.out.println("Cow ID:");
-		int cowid = sc.nextInt();
-		System.out.println("Cow Sex(암/수):");
-		String cowsex = sc.next();
-		System.out.println("Cow weight(kg):");
-		double cowweight = sc.nextDouble();
-	}
-	public static void deleteCow() {
-		Scanner sc = new Scanner(System.in);
-		System.out.println("Cow ID:");
-		int cowid = sc.nextInt();
-	}
-	public static void editCow() {
-		Scanner sc = new Scanner(System.in);
-		System.out.println("Cow ID:");
-		int cowid = sc.nextInt();
-	}
-	public static void viewCow() {
-		Scanner sc = new Scanner(System.in);
-		System.out.println("Cow ID:");
-		int cowid = sc.nextInt();
-	}
-	public static void soldList() {
-		Scanner sc = new Scanner(System.in);
-		System.out.println("Cow ID:");
-		int cowid = sc.nextInt();
-	}
+
 }
 	
