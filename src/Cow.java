@@ -1,5 +1,5 @@
 
-public class Cow {  //생성자를 만들어야함 (클래스 이름과 동일한것이 생성자)
+public class Cow {  // 1.소의 정보를 넣을 수 있는 클래스를 만든것임 //생성자를 만들어야함 (클래스 이름과 동일한것이 생성자)
 	
 	int id;
 	int birth;
@@ -27,8 +27,7 @@ public class Cow {  //생성자를 만들어야함 (클래스 이름과 동일한것이 생성자)
 		this.weight = weight;
 	}                            
 	
-	public void printinfo(){//static 이 빠진이유는 스태틱은 메모리에 바로 올라가는건데 바로 올라갈 필요가 없어서
+	public void printinfo(){  //static 이 빠진이유는 스태틱은 메모리에 바로 올라가는건데 바로 올라갈 필요가 없어서
 		System.out.println("ID:"+ id+" "+ "Birth:" + birth +"년도 " + "Sex:" + sex +" " + "Weight:"+ weight+"kg ");
-	}
-		
+	}	
 }
