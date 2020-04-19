@@ -1,4 +1,4 @@
-import java.util.Scanner;
+  import java.util.Scanner;
 
 public class MenuManager {    // 그냥 메뉴에서 사용자의 입력이 이렇게 된다 하는 것만 처리해줌 그 외에 세부적인 거는 Cowmanager 클래스 에서 하게 됨.
 
