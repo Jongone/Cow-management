@@ -1,5 +1,5 @@
 package cow;
- 
+
 public enum CowKind {
-	MilkCow,Bull,BlackCow
+	MilkCow,Bull,Bison
 }

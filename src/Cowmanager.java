@@ -1,8 +1,10 @@
 import java.util.ArrayList;
 import java.util.Scanner;
 
+import cow.Bison;
 import cow.BullCow;
 import cow.Cow;
+import cow.CowKind;
 
 public class Cowmanager {  // 2. 메뉴의 번호항목의 내용을 입력하는 공간임 
 	// 기존 :Cow cow; (4주차)  //소의 정보가 들어가는 공간. (형식: 클래스 이름(Cow) 변수명(cow))
@@ -14,25 +16,30 @@ public class Cowmanager {  // 2. 메뉴의 번호항목의 내용을 입력하는 공간임
 	}//생성자
 
 	public void addCow() {
-		// 기존 :cow = new Cow(); (4주차) //새로운 객체를 만든는 부분이 필요해서 새로 선언함
-		//위에 Cow cow; 가 삭제되서 위에거 바꾸거 인스턴스로 다시 넣어준거 (간단한 내용)
 		int kind =0;
 		Cow cow;
 		while (kind != 1&& kind !=2) {
 			System.out.println("--Cow Kind--");
 			System.out.println("1. for Milk Cow");
 			System.out.println("2. for Bull");
-			System.out.println("Select number for Cow Kind between 1 and 2:");
+			System.out.println("3. for Bison");
+			System.out.println("Select number 1,2 or 3 for Cow Kind :");
 			kind = sc.nextInt();
 			if (kind==1) {
-				cow =new Cow();
+				cow =new Cow(CowKind.MilkCow);
 				cow.getUserInput(sc);
 				cows.add(cow);
 				break;
 			}
 			else if(kind==2) {
-				cow =new BullCow();
+				cow =new BullCow(CowKind.Bull);
 				cow.getUserInput(sc);
+				cows.add(cow);  //하나 만들고 하나 추가하고 각각 과정
+				break;
+			}
+			else if(kind==3) {
+				cow =new Bison(CowKind.Bison);
+				cow.getUserInput(sc); // 거기있는 입력을 받는다.
 				cows.add(cow);  //하나 만들고 하나 추가하고 각각 과정
 				break;
 			}
@@ -40,23 +47,14 @@ public class Cowmanager {  // 2. 메뉴의 번호항목의 내용을 입력하는 공간임
 				System.out.println("Select number for Cow Kind between 1 and 2:");
 			}
 		}
-
-//		System.out.println("Cow ID:");
-//		int id = sc.nextInt();
-//		System.out.println("Cow Birth(출생년도):");
-//		int birth = sc.nextInt();
-//		System.out.println("Cow Sex(암/수):");
-//		String sex = sc.next(); //이 부분 사용자의 입력을 받아 그입력값을 다른 클래스에 집어넣는 과정을 잘 만든거임 한번 보자! 내가 만든 프로그램 ... 이거는 차량 시물레이션 3주차 과제에도 나온다
-//		System.out.println("Cow weight(kg):");
-//		double weight = sc.nextDouble();
-
-	//	cows.add(cow); // (4주차) 목록을 하나 만들어서 그 목록에 넣은거임** 해석1. Cows 목록 -- 해석2.add( ) 괄호안의 내용이 추가.**
 	}
+	
 	public void deleteCow() {
 		System.out.println("Cow ID:");
 		int cowid = sc.nextInt();
 
 		int index = -1;
+		
 		for (int i = 0 ; i <cows.size();i++) {
 			if (cows.get(i).getId() == cowid) { 
 				index = i;  
@@ -129,18 +127,8 @@ public class Cowmanager {  // 2. 메뉴의 번호항목의 내용을 입력하는 공간임
 		}//for
 	}
 	public void viewCows() {
-		//		System.out.println("Cow ID:");
-		//		int cowid = sc.nextInt();
 		for (int i = 0 ; i <cows.size();i++) {
 			cows.get(i).printinfo();       //(4주차) 목록을 만들어 줘야 하기 때문에 반복문을 사용해서 출력하는 것.
 		}
-		/*	if (cow.id == cowid) {
-			System.out.print("소의 정보 ");
-		    cow.printinfo(); 
-		}
-		else {
-			System.out.print("존재하지 않는 ID입니다."+"\n");
-			return;
-		} */
 	}
 }

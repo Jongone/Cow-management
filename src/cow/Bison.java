@@ -2,14 +2,15 @@ package cow;
 
 import java.util.Scanner;
 
-public class BullCow extends Cow {
+public class Bison extends Cow {
+	String birthplace;
 	double horn;
 	
-	public BullCow(CowKind kind){
-		this.kind=kind; 
+	public Bison(CowKind kind){
+		super(kind); 
 	}
-
-	public void getUserInput(Scanner sc) {
+	
+	public void getUserInput(Scanner sc) { //오버라이드
 		System.out.println("Cow ID:");
 		int id = sc.nextInt();
 		this.setId(id);
@@ -17,10 +18,14 @@ public class BullCow extends Cow {
 		System.out.println("Cow Birth(출생년도):");
 		int birth = sc.nextInt();
 		this.setBirth(birth);
+		
+		System.out.println("Cow BirthPlace(출생지):");
+		String birthplace = sc.next();
+		this.birthplace = birthplace; 
 
-//		System.out.println("Cow Sex(암/수):");
-//		String sex = sc.next();
-//		this.setSex(sex);
+		System.out.println("Cow Sex(암/수):");
+		String sex = sc.next();
+		this.setSex(sex);
 
 		System.out.println("Cow weight(kg):");
 		double weight = sc.nextDouble();
@@ -31,10 +36,7 @@ public class BullCow extends Cow {
 		this.horn=horn;
 	}	
 	public void printinfo(){  //static 이 빠진이유는 스태틱은 메모리에 바로 올라가는건데 바로 올라갈 필요가 없어서
-		System.out.println("ID:"+ id+" Kind:"+kind+ " Birth:" + birth +"년도 " + " Weight:"+ weight+"kg"+" Horn: "+horn+"cm " );
+		System.out.println("ID:"+ id+" Kind:"+kind+ " Birth:" + birth +"년도 " +" BirthPlace:"+this.birthplace + " Sex:" + sex + " Weight:"+ weight+"kg"+" Horn :"+horn+"cm " );
 	}
+
 }
-
-
-
-

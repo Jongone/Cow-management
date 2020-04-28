@@ -1,11 +1,11 @@
-  import java.util.Scanner;
+import java.util.Scanner;
 
-public class MenuManager {    // 그냥 메뉴에서 사용자의 입력이 이렇게 된다 하는 것만 처리해줌 그 외에 세부적인 거는 Cowmanager 클래스 에서 하게 됨.
+public class MenuManager {    
 
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);    //필드를 통해 인스턴스를 계속 사용하지 않고 사용하게 함
 		Cowmanager Cowmanager = new Cowmanager(sc);  
-		
+
 		int num = 4;
 
 		while(num!=5) {
@@ -34,6 +34,5 @@ public class MenuManager {    // 그냥 메뉴에서 사용자의 입력이 이렇게 된다 하는 
 			}
 		}
 	}
-
 }
-	
+
